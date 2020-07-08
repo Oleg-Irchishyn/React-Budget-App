@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/React-Budget-App/static/css/main.b973737b.chunk.css",
+    "main.js": "/React-Budget-App/static/js/main.4e0ebc96.chunk.js",
+    "main.js.map": "/React-Budget-App/static/js/main.4e0ebc96.chunk.js.map",
+    "runtime-main.js": "/React-Budget-App/static/js/runtime-main.a88a2613.js",
+    "runtime-main.js.map": "/React-Budget-App/static/js/runtime-main.a88a2613.js.map",
+    "static/js/2.c2fb45a2.chunk.js": "/React-Budget-App/static/js/2.c2fb45a2.chunk.js",
+    "static/js/2.c2fb45a2.chunk.js.map": "/React-Budget-App/static/js/2.c2fb45a2.chunk.js.map",
+    "index.html": "/React-Budget-App/index.html",
+    "precache-manifest.93944187c5b849ed6e7d9be8fbb5d8b0.js": "/React-Budget-App/precache-manifest.93944187c5b849ed6e7d9be8fbb5d8b0.js",
+    "service-worker.js": "/React-Budget-App/service-worker.js",
+    "static/css/main.b973737b.chunk.css.map": "/React-Budget-App/static/css/main.b973737b.chunk.css.map",
+    "static/js/2.c2fb45a2.chunk.js.LICENSE.txt": "/React-Budget-App/static/js/2.c2fb45a2.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/React-Budget-App/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a88a2613.js",
+    "static/js/2.c2fb45a2.chunk.js",
+    "static/css/main.b973737b.chunk.css",
+    "static/js/main.4e0ebc96.chunk.js"
+  ]
+}
