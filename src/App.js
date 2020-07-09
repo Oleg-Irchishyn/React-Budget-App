@@ -8,6 +8,9 @@ import *as appActions from './redux/reducers/appReducer';
 import { initializeApp } from './redux/reducers/appReducer';
 import { initializeAppSelector } from './redux/selectors/appSelectors';
 import Preloader from './components/common/Preloader/Preloader';
+import Header from "./components/Header/Header";
+import Balance from "./components/Balance/Balance";
+import AddTransactions from "./components/AddTransactions/AddTransactions";
 
 class App extends React.Component {
   componentDidMount() {
@@ -21,7 +24,9 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="app-wrapper">
-          <h1>App</h1>
+          <Header />
+          <Balance />
+          <AddTransactions />
         </div>
       </div>
     )

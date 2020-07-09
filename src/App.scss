@@ -31,7 +31,7 @@
 
 .header h1 {
   font-family: "Muli", serif;
-  font-size: 6rem;
+  font-size: 6em;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -45,20 +45,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 5vh;
   text-align: center;
 }
 
 .balance h2 {
   font-family: "Baloo Da 2", serif;
-  font-size: 4.5rem;
+  font-size: 5em;
   font-weight: 300;
   text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
 }
 
 .balance h3 {
   font-family: "Baloo Da 2", serif;
-  font-size: 4rem;
+  font-size: 4em;
   font-weight: 300;
   text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
 }
@@ -66,7 +66,7 @@
 .income-expense {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 10rem;
+  margin-top: 5vh;
   font-family: "Muli", serif;
   text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
   text-align: right;
@@ -86,14 +86,14 @@
 }
 
 .income-expense h3 {
-  font-size: 3.5rem;
+  font-size: 4em;
   font-weight: 300;
   margin-bottom: 2rem;
   width: 100%;
 }
 
 .income-expense p {
-  font-size: 3rem;
+  font-size: 3em;
   font-weight: 700;
   text-align: center;
 }
