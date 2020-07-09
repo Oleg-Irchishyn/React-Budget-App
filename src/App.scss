@@ -121,7 +121,7 @@
   grid-row: 1 / -1;
 }
 
-.input-group input:not([type="submit"]) {
+.input-group input {
   width: 30rem;
   margin-bottom: 2.5rem;
   border: none;
@@ -135,15 +135,15 @@
   transition: border-bottom 0.4s;
 }
 
-.income input:not([type="submit"]):focus {
+.income input:focus {
   border-bottom: 0.2rem solid #77c987;
 }
 
-.expense input:not([type="submit"]):focus {
+.expense input:focus {
   border-bottom: 0.2rem solid #ff716e;
 }
 
-.input-group input[type="submit"] {
+.input-group button[type="submit"] {
   width: 10rem;
   padding: 0.7rem;
   border: none;
@@ -160,15 +160,15 @@
   text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
 }
 
-.input-group input[type="submit"]:active {
+.input-group button[type="submit"]:active {
   transform: translateY(0.3rem);
 }
 
-.income input[type="submit"] {
+.income button[type="submit"] {
   background-color: #77c987;
 }
 
-.expense input[type="submit"] {
+.expense button[type="submit"] {
   background-color: #ff716e;
 }
 

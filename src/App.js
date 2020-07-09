@@ -11,6 +11,8 @@ import Preloader from './components/common/Preloader/Preloader';
 import Header from "./components/Header/Header";
 import Balance from "./components/Balance/Balance";
 import AddTransactions from "./components/AddTransactions/AddTransactions";
+import IncomeList from './components/IncomeList/IncomeList';
+import ExpenseList from './components/ExpenseList/ExpenseList';
 
 class App extends React.Component {
   componentDidMount() {
@@ -27,6 +29,8 @@ class App extends React.Component {
           <Header />
           <Balance />
           <AddTransactions />
+          <IncomeList />
+          <ExpenseList />
         </div>
       </div>
     )

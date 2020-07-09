@@ -1,50 +1,46 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Input } from '../common/FormControls/FormControls';
-import { maxLength } from '../../redux/utils/validators/validatos';
+import { maxLengthCreator, required } from '../../redux/utils/validators/validatos';
 
 const AddTransactions = React.memo((props) => {
-  const onIncomeformSubmit = (formData) => {
-    console.log(formData)
+  const onIncomeFormSubmit = (formData) => {
+    console.log(formData.Income, formData.IncomeAmount)
   }
-  const onExpensesformSubmit = (formData) => {
-    console.log(formData)
+  const onExpensesFormSubmit = (formData) => {
+    console.log(formData.Expenses, formData.ExpensesAmount)
   }
   return (
-    <React.Fragment>
-      <IncomeReduxForm onSubmit={onIncomeformSubmit} />
-      <ExpensesReduxForm onSubmit={onExpensesformSubmit} />
-    </React.Fragment>
+    <div className="form-wrapper">
+      <IncomeReduxForm onSubmit={onIncomeFormSubmit} />
+      <ExpensesReduxForm onSubmit={onExpensesFormSubmit} />
+    </div>
   )
 });
 
-const IncomeForm = (handleSubmit, error) => {
-  const maxLength15 = maxLength(15)
+const IncomeForm = ({ handleSubmit }) => {
+  const maxLength15 = maxLengthCreator(15)
   return (
-    <div className="form-wrapper">
-      <form onSubmit={handleSubmit}>
-        <div className="input-group income">
-          <Field component={Input} name="Income" placeholder="Add Income..." type="text" validate={[maxLength15]} />
-          <Field component={Input} name="IncomeAmount" placeholder="Amount" type="number" />
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="input-group income">
+        <Field component={Input} name="Income" placeholder="Add Income..." type="text" autoComplete="off" validate={[maxLength15]} />
+        <Field component={Input} name="IncomeAmount" placeholder="Amount" type="number" autoComplete="off" />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   )
 }
 
-const ExpensesForm = (handleSubmit, error) => {
-  const maxLength15 = maxLength(15)
+const ExpensesForm = ({ handleSubmit }) => {
+  const maxLength15 = maxLengthCreator(15)
   return (
-    <div className="form-wrapper">
-      <form onSubmit={handleSubmit}>
-        <div className="input-group expense">
-          <Field component={Input} name="Expenses" placeholder="Add Expense..." type="text" validate={[maxLength15]} />
-          <Field component={Input} name="ExpensesAmount" placeholder="Amount" type="number" />
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="input-group expense">
+        <Field component={Input} name="Expenses" placeholder="Add Expense..." type="text" autoComplete="off" validate={[maxLength15]} />
+        <Field component={Input} name="ExpensesAmount" placeholder="Amount" type="number" autoComplete="off" />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   )
 }
 

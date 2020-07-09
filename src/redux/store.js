@@ -2,10 +2,14 @@ import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import appReducer from "./reducers/appReducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from "redux-form";
+import incomeReducer from "./reducers/incomeReducer";
+import expenseReducer from "./reducers/expenseReducer";
 
 
 let reducers = combineReducers({
   app: appReducer,
+  income: incomeReducer,
+  expense: expenseReducer,
   form: formReducer
 });
 
