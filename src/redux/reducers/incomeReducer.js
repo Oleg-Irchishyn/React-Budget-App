@@ -17,8 +17,7 @@ let initialState = {
       incomeText: "Bonus",
       incomeAmount: 13000
     }
-  ],
-  incometransaction: {}
+  ]
 }
 
 const incomeReducer = (state = initialState, action) => {
