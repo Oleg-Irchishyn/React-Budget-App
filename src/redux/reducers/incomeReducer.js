@@ -1,4 +1,4 @@
-const INITIALIZED_SUCCESS = 'BudgetApp/income/INITIALIZED_SUCCESS';
+const ADD_INCOME = 'BudgetApp/income/ADD_INCOME';
 
 let initialState = {
   incomeTransactions: [
@@ -17,18 +17,25 @@ let initialState = {
       incomeText: "Bonus",
       incomeAmount: 13000
     }
-  ]
+  ],
+  incometransaction: {}
 }
 
 const incomeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INITIALIZED_SUCCESS:
+    case ADD_INCOME:
       return {
-        ...state
-      }
+        ...state,
+        incomeTransactions: [...state.incomeTransactions, action.payload]
+      };
     default:
       return state;
   }
 }
+
+export const addIncome = (incomeTransaction) => ({
+  type: ADD_INCOME,
+  payload: incomeTransaction
+});
 
 export default incomeReducer;

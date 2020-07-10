@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose, bindActionCreators } from 'redux';
 import *as appActions from './redux/reducers/appReducer';
+import *as incomeActions from './redux/reducers/incomeReducer';
 import { initializeApp } from './redux/reducers/appReducer';
 import { initializeAppSelector } from './redux/selectors/appSelectors';
 import Preloader from './components/common/Preloader/Preloader';
@@ -19,7 +20,7 @@ class App extends React.Component {
     initializeApp();
   }
   render() {
-    const { initialized } = this.props;
+    const { initialized, addIncome } = this.props;
     if (!initialized) {
       return <Preloader />
     }
@@ -28,7 +29,7 @@ class App extends React.Component {
         <div className="app-wrapper">
           <Header />
           <Balance />
-          <AddTransactions />
+          <AddTransactions addIncome={addIncome} />
           <IncomeList />
           <ExpenseList />
         </div>
@@ -42,7 +43,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  ...bindActionCreators(appActions, dispatch)
+  ...bindActionCreators(appActions, dispatch),
+  ...bindActionCreators(incomeActions, dispatch)
 })
 
 export default compose(
