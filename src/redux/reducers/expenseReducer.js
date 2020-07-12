@@ -9,7 +9,7 @@ let initialState = {
     },
     {
       id: 5,
-      expenseTextt: "Bank",
+      expenseText: "Bank",
       expenseAmount: 2000
     },
     {

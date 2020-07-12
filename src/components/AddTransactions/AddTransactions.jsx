@@ -3,19 +3,22 @@ import { Field, reduxForm } from 'redux-form';
 import { Input } from '../common/FormControls/FormControls';
 import { maxLengthCreator, required } from '../../redux/utils/validators/validatos';
 import { v4 as uuidv4 } from 'uuid';
+import { bindActionCreators } from 'redux';
+import *as incomeActions from '../../redux/reducers/incomeReducer';
+import { connect } from 'react-redux';
 
 const AddTransactions = ({ addIncome }) => {
 
   const onSubmitIncome = (values) => {
     const newIncomeTransaction = {
       id: uuidv4(),
-      IncomeText: values.IncomeText,
-      IncomeAmount: values.IncomeAmount * 1
+      incomeText: values.incomeText,
+      incomeAmount: values.incomeAmount * 1
     }
     addIncome(newIncomeTransaction)
   }
   const onExpensesFormSubmit = (formData) => {
-    console.log(formData.ExpensesText, formData.ExpensesAmount)
+    console.log(formData.expensesText, formData.expensesAmount)
   }
   return (
     <div className="form-wrapper">
@@ -25,24 +28,23 @@ const AddTransactions = ({ addIncome }) => {
   )
 }
 
-const IncomeFormvalidators = [required, maxLengthCreator(100)];
+const incomeFormvalidators = [required, maxLengthCreator(100)];
 
 const IncomeForm = React.memo(({ handleSubmit }) => {
   const [income, setIncome] = useState({
-    IncomeText: '',
-    IncomeAmount: 0
+    incomeText: '',
+    incomeAmount: 0
   })
   const onChangeIncome = (e) => {
     setIncome({ ...income, [e.target.name]: e.target.value })
-    console.log(income);
   }
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-group income">
-        <Field component={Input} name="IncomeText" placeholder="Add Income..."
+        <Field component={Input} name="incomeText" placeholder="Add Income..."
           type="text" autoComplete="off" onChange={onChangeIncome}
-          validate={IncomeFormvalidators} />
-        <Field component={Input} name="IncomeAmount" placeholder="Amount" type="number"
+          validate={incomeFormvalidators} />
+        <Field component={Input} name="incomeAmount" placeholder="Amount" type="number"
           autoComplete="off" onChange={onChangeIncome} />
         <button type="submit">Submit</button>
       </div>
@@ -50,14 +52,14 @@ const IncomeForm = React.memo(({ handleSubmit }) => {
   )
 })
 
-const ExpenseFormvalidators = [required, maxLengthCreator(100)];
+const expenseFormvalidators = [required, maxLengthCreator(100)];
 
 const ExpensesForm = React.memo(({ handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-group expense">
-        <Field component={Input} name="ExpensesText" placeholder="Add Expense..." type="text" autoComplete="off" validate={ExpenseFormvalidators} />
-        <Field component={Input} name="ExpensesAmount" placeholder="Amount" type="number" autoComplete="off" />
+        <Field component={Input} name="expensesText" placeholder="Add Expense..." type="text" autoComplete="off" validate={expenseFormvalidators} />
+        <Field component={Input} name="expensesAmount" placeholder="Amount" type="number" autoComplete="off" />
         <button type="submit">Submit</button>
       </div>
     </form>
@@ -73,4 +75,9 @@ const ExpensesReduxForm = reduxForm({
   form: "expenses"
 })(ExpensesForm);
 
-export default AddTransactions;
+
+const mapDispatchToProps = (dispatch) => ({
+  ...bindActionCreators(incomeActions, dispatch)
+})
+
+export default connect(null, mapDispatchToProps)(AddTransactions);
