@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Field, reduxForm, reset } from 'redux-form';
-import { Input } from '../common/FormControls/FormControls';
+import { reduxForm, reset } from 'redux-form';
+import { Input, createField } from '../common/FormControls/FormControls';
 import { maxLengthCreator, required } from '../../redux/utils/validators/validatos';
 import { v4 as uuidv4 } from 'uuid';
 import { bindActionCreators } from 'redux';
@@ -9,6 +9,7 @@ import *as expenseActions from '../../redux/reducers/expenseReducer';
 import { connect } from 'react-redux';
 
 const AddTransactions = ({ addIncome, addExpense }) => {
+
   const onSubmitIncome = (values, dispatch) => {
     const newIncomeTransaction = {
       id: uuidv4(),
@@ -18,6 +19,7 @@ const AddTransactions = ({ addIncome, addExpense }) => {
     addIncome(newIncomeTransaction);
     dispatch(reset("incomeForm"));
   }
+
   const onSubmitExpense = (values, dispatch) => {
     const newExpenseTransaction = {
       id: uuidv4(),
@@ -27,6 +29,7 @@ const AddTransactions = ({ addIncome, addExpense }) => {
     addExpense(newExpenseTransaction);
     dispatch(reset("expensesForm"));
   }
+
   return (
     <div className="form-wrapper">
       <IncomeReduxForm onSubmit={onSubmitIncome} />
@@ -49,11 +52,8 @@ const IncomeForm = React.memo(({ handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-group income">
-        <Field component={Input} name="incomeText" placeholder="Add Income..."
-          type="text" autoComplete="off" onChange={onChangeIncome}
-          validate={incomeFormvalidators} value={incomeText} />
-        <Field component={Input} name="incomeAmount" placeholder="0" type="number"
-          autoComplete="off" onChange={onChangeIncome} value={incomeAmount} />
+        {createField(Input, "incomeText", "Add Income...", "text", "off", onChangeIncome, incomeText, incomeFormvalidators)}
+        {createField(Input, "incomeAmount", "0", "number", "off", onChangeIncome, incomeAmount)}
         <button type="submit">Submit</button>
       </div>
     </form>
@@ -74,12 +74,8 @@ const ExpensesForm = React.memo(({ handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-group expense">
-        <Field component={Input} name="expenseText" placeholder="Add Expense..."
-          type="text" autoComplete="off" validate={expenseFormvalidators}
-          onChange={onChangeExpense} value={expenseText} />
-        <Field component={Input} name="expenseAmount" placeholder="0"
-          type="number" autoComplete="off" onChange={onChangeExpense}
-          value={expenseAmount} />
+        {createField(Input, "expenseText", "Add Expense...", "text", "off", onChangeExpense, expenseText, expenseFormvalidators)}
+        {createField(Input, "expenseAmount", "0", "number", "off", onChangeExpense, expenseAmount)}
         <button type="submit">Submit</button>
       </div>
     </form>
