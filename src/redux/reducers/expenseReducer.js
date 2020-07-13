@@ -1,34 +1,25 @@
-const INITIALIZED_SUCCESS = 'BudgetApp/expense/INITIALIZED_SUCCESS';
+const ADD_EXPENSE = 'BudgetApp/income/ADD_EXPENSE';
 
 let initialState = {
   expenseTransactions: [
-    {
-      id: 4,
-      expenseText: "Rent",
-      expenseAmount: 1000
-    },
-    {
-      id: 5,
-      expenseText: "Bank",
-      expenseAmount: 2000
-    },
-    {
-      id: 6,
-      expenseText: "Clothes",
-      expenseAmount: 500
-    }
   ]
 }
 
 const expenseReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INITIALIZED_SUCCESS:
+    case ADD_EXPENSE:
       return {
-        ...state
+        ...state,
+        expenseTransactions: [action.expenseTransaction, ...state.expenseTransactions]
       }
     default:
       return state;
   }
 }
+
+export const addExpense = (expenseTransaction) => ({
+  type: ADD_EXPENSE,
+  expenseTransaction,
+});
 
 export default expenseReducer;
