@@ -6,13 +6,13 @@ import ExpenseTransaction from '../ExpenseTransaction/ExpenseTransaction';
 import { expenseTransactions } from '../../redux/selectors/expenseSelectors';
 
 
-const ExpenseList = ({ expenseTransactions }) => {
+const ExpenseList = ({ expenseTransactions, deleteExpenseTransaction }) => {
   return (
     <div className="transactions  transactions-expense">
       <h2>Transaction History</h2>
       <ul className="transaction-list">
         {expenseTransactions.map(expenseTransaction => (
-          <ExpenseTransaction key={expenseTransaction.id} expenseTransaction={expenseTransaction} />
+          <ExpenseTransaction key={expenseTransaction.id} expenseTransaction={expenseTransaction} deleteExpenseTransaction={deleteExpenseTransaction} />
         ))}
       </ul>
     </div>
