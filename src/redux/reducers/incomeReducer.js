@@ -2,14 +2,7 @@ const ADD_INCOME = 'BudgetApp/income/ADD_INCOME';
 const DELETE_INCOME_TRANSACTION = 'BudgetApp/income/DELETE_INCOME_TRANSACTION';
 
 let initialState = {
-  incomeTransactions: [
-    {
-      id: 1,
-      incomeText: "Car Sold",
-      incomeAmount: 2000
-    }
-
-  ]
+  incomeTransactions: JSON.parse(localStorage.getItem('incomeTransactions')) || []
 }
 
 const incomeReducer = (state = initialState, action) => {

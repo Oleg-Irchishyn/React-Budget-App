@@ -3,13 +3,7 @@ const DELETE_EXPENSE_TRANSACTION = 'BudgetApp/expense/DELETE_EXPENSE_TRANSACTION
 
 
 let initialState = {
-  expenseTransactions: [
-    {
-      id: 2,
-      expenseText: "Rent",
-      expenseAmount: 500
-    }
-  ]
+  expenseTransactions: JSON.parse(localStorage.getItem('expenseTransactions')) || []
 }
 
 const expenseReducer = (state = initialState, action) => {
