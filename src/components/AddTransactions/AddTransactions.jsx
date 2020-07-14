@@ -65,7 +65,7 @@ const IncomeForm = React.memo(({ handleSubmit }) => {
     <form onSubmit={handleSubmit}>
       <div className="input-group income">
         {createField(Input, "incomeText", "Add Income...", "text", "off", onChangeIncome, incomeText, incomeFormvalidators)}
-        {createField(Input, "incomeAmount", "0", "number", "off", onChangeIncome, incomeAmount)}
+        {createField(Input, "incomeAmount", "0", "number", "off", onChangeIncome, incomeAmount, required)}
         <button type="submit">Submit</button>
       </div>
     </form>
@@ -87,7 +87,7 @@ const ExpensesForm = React.memo(({ handleSubmit }) => {
     <form onSubmit={handleSubmit}>
       <div className="input-group expense">
         {createField(Input, "expenseText", "Add Expense...", "text", "off", onChangeExpense, expenseText, expenseFormvalidators)}
-        {createField(Input, "expenseAmount", "0", "number", "off", onChangeExpense, expenseAmount)}
+        {createField(Input, "expenseAmount", "0", "number", "off", onChangeExpense, expenseAmount, required)}
         <button type="submit">Submit</button>
       </div>
     </form>
