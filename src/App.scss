@@ -25,6 +25,11 @@
     @content;
   }
 }
+@mixin landscape-orientation {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
 
 /*variables*/
 $font-main: "Muli", serif;
@@ -56,6 +61,21 @@ $font-secondary: "Baloo Da 2", serif;
   }
 }
 
+@-moz-document url-prefix() {
+  .app-wrapper {
+    .header,
+    .balance,
+    .form-wrapper {
+      margin-bottom: 2vh;
+    }
+  }
+  .input-group {
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+}
+
 .app-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -65,6 +85,13 @@ $font-secondary: "Baloo Da 2", serif;
   border-radius: 0.5rem;
   height: 100vh;
   padding: 0 15px 0 15px;
+  @include landscape-orientation {
+    height: auto;
+    padding: 15px;
+    @-moz-document url-prefix() {
+      height: auto;
+    }
+  }
 }
 
 .header {
