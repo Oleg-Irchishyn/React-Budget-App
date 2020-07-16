@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-Budget-App/static/css/main.b36f0f5a.chunk.css",
+    "main.css": "/React-Budget-App/static/css/main.1101ad3d.chunk.css",
     "main.js": "/React-Budget-App/static/js/main.68fd2594.chunk.js",
     "main.js.map": "/React-Budget-App/static/js/main.68fd2594.chunk.js.map",
     "runtime-main.js": "/React-Budget-App/static/js/runtime-main.a88a2613.js",
@@ -9,10 +9,10 @@
     "static/js/2.8af00dff.chunk.js": "/React-Budget-App/static/js/2.8af00dff.chunk.js",
     "static/js/2.8af00dff.chunk.js.map": "/React-Budget-App/static/js/2.8af00dff.chunk.js.map",
     "index.html": "/React-Budget-App/index.html",
-    "precache-manifest.02313dcec9f93c23a555c9194a95a0e2.js": "/React-Budget-App/precache-manifest.02313dcec9f93c23a555c9194a95a0e2.js",
+    "precache-manifest.02c7873b63e2f184d55f89587aed7420.js": "/React-Budget-App/precache-manifest.02c7873b63e2f184d55f89587aed7420.js",
     "service-worker.js": "/React-Budget-App/service-worker.js",
     "static/css/2.ca27357e.chunk.css.map": "/React-Budget-App/static/css/2.ca27357e.chunk.css.map",
-    "static/css/main.b36f0f5a.chunk.css.map": "/React-Budget-App/static/css/main.b36f0f5a.chunk.css.map",
+    "static/css/main.1101ad3d.chunk.css.map": "/React-Budget-App/static/css/main.1101ad3d.chunk.css.map",
     "static/js/2.8af00dff.chunk.js.LICENSE.txt": "/React-Budget-App/static/js/2.8af00dff.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/React-Budget-App/static/media/fontawesome-webfont.fee66e71.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.a88a2613.js",
     "static/css/2.ca27357e.chunk.css",
     "static/js/2.8af00dff.chunk.js",
-    "static/css/main.b36f0f5a.chunk.css",
+    "static/css/main.1101ad3d.chunk.css",
     "static/js/main.68fd2594.chunk.js"
   ]
 }
