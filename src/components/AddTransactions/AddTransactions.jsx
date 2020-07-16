@@ -50,7 +50,8 @@ const AddTransactions = ({ addIncome, addExpense, incomeTransactions, expenseTra
   )
 }
 
-const incomeFormvalidators = [required, maxLengthCreator(100)];
+const incomeFormvalidators = [required, maxLengthCreator(50)];
+let maxLengthIncomeAmount = maxLengthCreator(16)
 
 const IncomeForm = React.memo(({ handleSubmit }) => {
   const [income, setIncome] = useState({
@@ -65,14 +66,15 @@ const IncomeForm = React.memo(({ handleSubmit }) => {
     <form onSubmit={handleSubmit}>
       <div className="input-group income">
         {createField(Input, "incomeText", "Add Income...", "text", "off", onChangeIncome, incomeText, incomeFormvalidators)}
-        {createField(Input, "incomeAmount", "0", "number", "off", onChangeIncome, incomeAmount, required)}
+        {createField(Input, "incomeAmount", "0", "number", "off", onChangeIncome, incomeAmount, [maxLengthIncomeAmount, required])}
         <button type="submit">Submit</button>
       </div>
     </form>
   )
 })
 
-const expenseFormvalidators = [required, maxLengthCreator(100)];
+const expenseFormvalidators = [required, maxLengthCreator(50)];
+let maxLengthExpenseAmount = maxLengthCreator(16)
 
 const ExpensesForm = React.memo(({ handleSubmit }) => {
   const [expense, setExpense] = useState({
@@ -87,7 +89,7 @@ const ExpensesForm = React.memo(({ handleSubmit }) => {
     <form onSubmit={handleSubmit}>
       <div className="input-group expense">
         {createField(Input, "expenseText", "Add Expense...", "text", "off", onChangeExpense, expenseText, expenseFormvalidators)}
-        {createField(Input, "expenseAmount", "0", "number", "off", onChangeExpense, expenseAmount, required)}
+        {createField(Input, "expenseAmount", "0", "number", "off", onChangeExpense, expenseAmount, [required, maxLengthExpenseAmount])}
         <button type="submit">Submit</button>
       </div>
     </form>

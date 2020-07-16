@@ -1,6 +1,4 @@
-import React from 'react';
-import './App.scss'
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose, bindActionCreators } from 'redux';
@@ -13,28 +11,28 @@ import Balance from "./components/Balance/Balance";
 import AddTransactions from "./components/AddTransactions/AddTransactions";
 import IncomeList from './components/IncomeList/IncomeList';
 import ExpenseList from './components/ExpenseList/ExpenseList';
+import './App.scss';
 
-class App extends React.Component {
-  componentDidMount() {
+const App = ({ initialized }) => {
+  useEffect(() => {
     initializeApp();
+  });
+  if (!initialized) {
+    return <Preloader />
   }
-  render() {
-    const { initialized } = this.props;
-    if (!initialized) {
-      return <Preloader />
-    }
-    return (
-      <div className="container">
-        <div className="app-wrapper">
-          <Header />
-          <Balance />
-          <AddTransactions />
+  return (
+    <div className="container">
+      <div className="app-wrapper">
+        <Header />
+        <Balance />
+        <AddTransactions />
+        <div className="transaction-history__wrapper">
           <IncomeList />
           <ExpenseList />
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => ({

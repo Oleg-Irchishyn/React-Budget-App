@@ -1,1 +1,1 @@
-Budget App build on react.js
+ReactJs Budget App

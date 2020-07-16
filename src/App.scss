@@ -1,208 +1,247 @@
+/*Media quieries mixins*/
+
+@mixin xs-devices {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
+@mixin sm-devices {
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin md-devices {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin lg-devices {
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin xl-devices {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+/*variables*/
+$font-main: "Muli", serif;
+$font-secondary: "Baloo Da 2", serif;
+
 .container {
   width: 100%;
-  height: 100vh;
-  background-color: #77c987;
+  background-color: #2c2c2d;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.7);
+  overflow-x: hidden;
+  @include xl-devices {
+    max-width: 1140px;
+  }
+  @include lg-devices {
+    max-width: 960px;
+  }
+  @include md-devices {
+    max-width: 720px;
+  }
+  @include sm-devices {
+    max-width: 540px;
+  }
+  @include xs-devices {
+    max-width: 100%;
+  }
 }
 
 .app-wrapper {
-  width: 90%;
-  max-width: 150rem;
-  height: 80vh;
-  background-color: #2c2c2d;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  max-width: 100%;
   color: #eee;
   border-radius: 0.5rem;
-  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.7);
-  display: grid;
-  grid-template-columns: minmax(38%, 40rem) repeat(2, minmax(29%, 29rem));
-  grid-template-rows: repeat(10, 1fr);
-  grid-gap: 1rem;
+  height: 100vh;
+  padding: 0 15px 0 15px;
 }
 
 .header {
-  grid-column: 1 / 2;
-  grid-row: 1 / 4;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.header h1 {
-  font-family: "Muli", serif;
-  font-size: 6em;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: #f46036;
-  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  align-self: flex-start;
+  width: 50%;
+  @include xs-devices {
+    width: 100%;
+  }
+  h1 {
+    font-family: $font-main;
+    font-size: 6em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #f46036;
+    text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  }
 }
 
 .balance {
-  grid-column: 1 / 1;
-  grid-row: 3 / -1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5vh;
   text-align: center;
-}
-
-.balance h2 {
-  font-family: "Baloo Da 2", serif;
-  font-size: 5em;
-  font-weight: 300;
-  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
-}
-
-.balance h3 {
-  font-family: "Baloo Da 2", serif;
-  font-size: 4em;
-  font-weight: 300;
-  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  width: 50%;
+  align-self: flex-start;
+  @include xs-devices {
+    width: 100%;
+  }
+  h2,
+  h3 {
+    font-family: $font-secondary;
+    font-size: 5em;
+    font-weight: 300;
+    text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  }
+  h3 {
+    font-size: 4em;
+  }
 }
 
 .income-expense {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 5vh;
-  font-family: "Muli", serif;
+  justify-content: space-between;
+  margin: 5vh 0 0 0;
+  font-family: $font-main;
   text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
-  text-align: right;
-}
+  .plus,
+  .minus {
+    margin: 0 2rem;
+  }
+  .plus {
+    color: #77c987;
+  }
 
-.plus,
-.minus {
-  margin: 0 2rem;
-}
-
-.plus {
-  color: #77c987;
-}
-
-.minus {
-  color: #ff716e;
-}
-
-.income-expense h3 {
-  font-size: 4em;
-  font-weight: 300;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-.income-expense p {
-  font-size: 3em;
-  font-weight: 700;
-  text-align: center;
+  .minus {
+    color: #ff716e;
+  }
+  h3 {
+    font-size: 4em;
+    font-weight: 300;
+    margin: 0 0 1vh 0;
+    width: 100%;
+  }
+  p {
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+  }
 }
 
 .form-wrapper {
-  grid-column: 2 / -1;
-  grid-row: 2 / 4;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  @include xs-devices {
+    padding: 0 15px 0 15px;
+  }
+  input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 0.2rem solid #777;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    font-family: $font-secondary;
+    font-size: 1.8rem;
+    color: #eee;
+    outline: none;
+    transition: border-bottom 0.4s;
+  }
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  button[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+    font-family: $font-main;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #eee;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin: 1.5vh 0 0 0;
+    text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
+  }
+}
+.input-group.income {
+  input {
+    &:focus {
+      border-bottom: 2px solid #5a9b67;
+    }
+  }
+  button[type="submit"] {
+    background-color: #5a9b67;
+    &:hover {
+      background-color: transparent;
+      color: #5a9b67;
+    }
+  }
+}
+.input-group.expense {
+  input {
+    &:focus {
+      border-bottom: 2px solid #cf5856;
+    }
+  }
+  button[type="submit"] {
+    background-color: #cf5856;
+    &:hover {
+      background-color: transparent;
+      color: #cf5856;
+    }
+  }
 }
 
-.income {
-  grid-column: 1 / 2;
-  grid-row: 1 / -1;
-}
-
-.expense {
-  grid-column: 2 / -1;
-  grid-row: 1 / -1;
-}
-
-.input-group input {
-  width: 30rem;
-  margin-bottom: 2.5rem;
-  border: none;
-  background: transparent;
-  border-bottom: 0.2rem solid #777;
-  padding: 0.5rem 0.5rem 0.5rem 0;
-  font-family: "Baloo Da 2", serif;
-  font-size: 1.8rem;
-  color: #eee;
-  outline: none;
-  transition: border-bottom 0.4s;
-}
-
-.income input:focus {
-  border-bottom: 0.2rem solid #77c987;
-}
-
-.expense input:focus {
-  border-bottom: 0.2rem solid #ff716e;
-}
-
-.input-group button[type="submit"] {
-  width: 10rem;
-  padding: 0.7rem;
-  border: none;
-  outline: none;
-  border-radius: 0.7rem;
-  font-family: "Muli", serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  color: #eee;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  margin-top: 1rem;
-  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
-}
-
-.input-group button[type="submit"]:active {
-  transform: translateY(0.3rem);
-}
-
-.income button[type="submit"] {
-  background-color: #77c987;
-}
-
-.expense button[type="submit"] {
-  background-color: #ff716e;
-}
-
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-.transactions {
-  margin-top: 3rem;
-}
-
-.transactions h2 {
-  font-family: "Baloo da 2", serif;
-  font-size: 2.5rem;
-  letter-spacing: 0.1rem;
-  font-weight: 300;
-  margin-bottom: 2rem;
-}
-
-.transactions-income {
-  grid-column: 2 / 3;
-  grid-row: 5 / -1;
-}
-
-.transactions-expense {
-  grid-column: 3 / -1;
-  grid-row: 5 / -1;
+.transaction-history__wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  .transactions {
+    display: flex;
+    flex-direction: column;
+    @include xs-devices {
+      padding: 0 15px 0 15px;
+    }
+    h2 {
+      font-family: $font-secondary;
+      font-size: 2.5rem;
+      letter-spacing: 0.1rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      @include xs-devices {
+        text-align: center;
+      }
+    }
+  }
 }
 
 .transaction-list {
-  width: 92%;
-  max-height: 35rem;
+  width: 100%;
+  max-height: 20vh;
   overflow: hidden;
   overflow-y: auto;
+  list-style-type: none;
 }
 
 /* width */
@@ -222,21 +261,6 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 10px;
 }
 
-.transaction {
-  list-style: none;
-  font-family: "Baloo da 2", serif;
-  font-size: 1.8rem;
-  letter-spacing: 0.1rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-  padding: 0.4rem 0.4rem 0.4rem 0.7rem;
-  border-radius: 0.3rem;
-  width: 32rem;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
 .transactions-income .transaction {
   background-color: #5a9b67;
 }
@@ -245,68 +269,34 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: #cf5856;
 }
 
-.transaction-text {
-  width: 23rem;
-}
-
-.transaction-amount {
-  transform: translateX(3rem);
-}
-
-.delete-btn {
-  transform: translateX(4rem);
-  border: none;
-  background-color: transparent;
-  font-size: 2rem;
-  margin: 0 1rem;
-  color: #d4403e;
-  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  outline: none;
-}
-
-@media (max-width: 1500px) {
-  html {
-    font-size: 58%;
+.transaction {
+  position: relative;
+  font-family: $font-secondary;
+  font-size: 3em;
+  letter-spacing: 0.1rem;
+  margin: 0 0 1.5vh 0;
+  color: #fff;
+  padding: 0.4rem 0.4rem 0.4rem 0.7rem;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  &-text {
+    flex: 1;
   }
-
-  .app-wrapper {
-    width: 95%;
-    max-width: 140rem;
-    height: 85vh;
+  &-amount {
+    flex: 1;
   }
-
-  .balance {
-    margin-top: 6rem;
-  }
-
-  .income-expense {
-    margin-top: 7rem;
-  }
-
-  .transaction-list {
-    max-height: 31rem;
-  }
-
-  .transaction {
-    width: 30rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  html {
-    font-size: 52%;
-  }
-
-  .app-wrapper {
-    grid-gap: 0;
-  }
-
-  .transaction-list {
-    max-height: 29rem;
-  }
-
-  .transaction {
-    width: 28rem;
+  .delete-btn {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2em;
+    color: #d4403e;
+    text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    outline: none;
   }
 }
