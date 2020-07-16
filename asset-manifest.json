@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/React-Budget-App/static/css/main.52b19d74.chunk.css",
-    "main.js": "/React-Budget-App/static/js/main.b45809a8.chunk.js",
-    "main.js.map": "/React-Budget-App/static/js/main.b45809a8.chunk.js.map",
+    "main.css": "/React-Budget-App/static/css/main.f04d5847.chunk.css",
+    "main.js": "/React-Budget-App/static/js/main.2cb0ad56.chunk.js",
+    "main.js.map": "/React-Budget-App/static/js/main.2cb0ad56.chunk.js.map",
     "runtime-main.js": "/React-Budget-App/static/js/runtime-main.a88a2613.js",
     "runtime-main.js.map": "/React-Budget-App/static/js/runtime-main.a88a2613.js.map",
     "static/css/2.ca27357e.chunk.css": "/React-Budget-App/static/css/2.ca27357e.chunk.css",
-    "static/js/2.a005145a.chunk.js": "/React-Budget-App/static/js/2.a005145a.chunk.js",
-    "static/js/2.a005145a.chunk.js.map": "/React-Budget-App/static/js/2.a005145a.chunk.js.map",
+    "static/js/2.250d1150.chunk.js": "/React-Budget-App/static/js/2.250d1150.chunk.js",
+    "static/js/2.250d1150.chunk.js.map": "/React-Budget-App/static/js/2.250d1150.chunk.js.map",
     "index.html": "/React-Budget-App/index.html",
-    "precache-manifest.d64de87e8f5b5e6ab2aad894b513ff96.js": "/React-Budget-App/precache-manifest.d64de87e8f5b5e6ab2aad894b513ff96.js",
+    "precache-manifest.0166f8cbf25f64cf4b7fcd595566bb61.js": "/React-Budget-App/precache-manifest.0166f8cbf25f64cf4b7fcd595566bb61.js",
     "service-worker.js": "/React-Budget-App/service-worker.js",
     "static/css/2.ca27357e.chunk.css.map": "/React-Budget-App/static/css/2.ca27357e.chunk.css.map",
-    "static/css/main.52b19d74.chunk.css.map": "/React-Budget-App/static/css/main.52b19d74.chunk.css.map",
-    "static/js/2.a005145a.chunk.js.LICENSE.txt": "/React-Budget-App/static/js/2.a005145a.chunk.js.LICENSE.txt",
+    "static/css/main.f04d5847.chunk.css.map": "/React-Budget-App/static/css/main.f04d5847.chunk.css.map",
+    "static/js/2.250d1150.chunk.js.LICENSE.txt": "/React-Budget-App/static/js/2.250d1150.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/React-Budget-App/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.a88a2613.js",
     "static/css/2.ca27357e.chunk.css",
-    "static/js/2.a005145a.chunk.js",
-    "static/css/main.52b19d74.chunk.css",
-    "static/js/main.b45809a8.chunk.js"
+    "static/js/2.250d1150.chunk.js",
+    "static/css/main.f04d5847.chunk.css",
+    "static/js/main.2cb0ad56.chunk.js"
   ]
 }
